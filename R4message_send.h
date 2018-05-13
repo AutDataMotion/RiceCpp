@@ -26,12 +26,17 @@ private:
 	 * 字段描述：系统消息编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
+	/**
+	 * 字段描述： 
+	 * 字段类型：bigint  长度：null
+	 */
+	long message_id;
 	/**
 	 * 字段描述：接收人ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger receive_userid;
+	long receive_userid;
 	/**
 	 * 字段描述：消息状态代码 
 	 * 字段类型：enum  长度：2
@@ -40,22 +45,32 @@ private:
 public:
 	
 	
-	R4message_send& setId(biginteger aid){
+	R4message_send& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
 	
-	R4message_send& setReceive_userid(biginteger areceive_userid){
+	R4message_send& setMessage_id(long amessage_id){
+		message_id = amessage_id;
+		mapSQLTokens["message_id"] = to_string(message_id);
+		return *this;
+	}
+	long getMessage_id() {
+		return message_id;
+	}
+	
+	
+	R4message_send& setReceive_userid(long areceive_userid){
 		receive_userid = areceive_userid;
 		mapSQLTokens["receive_userid"] = to_string(receive_userid);
 		return *this;
 	}
-	biginteger getReceive_userid() {
+	long getReceive_userid() {
 		return receive_userid;
 	}
 	

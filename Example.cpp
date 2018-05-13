@@ -6,9 +6,13 @@
  * ----------------------------------------------------------------- 
  *  - -   : :        Zhongweng       1.0         1.0 Version   
  */
-
+#include <iostream>
+#include <string>
 #include <time.h>
 
+#include "Tkvalue.h"
+
+using namespace std;
 
 void TestStringCompare();
 void ExmpleInsert();
@@ -22,12 +26,10 @@ void getDateTimeNow(string& strDate){
 }
 int main(int argc, char* argv[]){
 
-	//ExmpleInsert();
+	ExmpleInsert();
 
 	//EmpUpdate();
-	/*return 0;
-	TestStringCompare();
-*/
+
 	cout << endl<<"***********input any one of keys then press 'Enter' to exit" << endl;
 	char s;
 	cin >> s;
@@ -43,22 +45,17 @@ void TestStringCompare(){
 }
 void ExmpleInsert(){
 
-	T5_dp_zw_r ZWR;
-	ZWR.setKey_("zwr_key").setStation("TG02").setAircraft("TG02")
-		.setProductmark("mark").setProductlevel("0B").setProductname("name")
-		.setBitsperpixel(12).setVerticalresolution(12.0).setDatabegintime("2016-09-03 12:00:00")
-		.setFilesize(1234).Insert();
-
-	T1_2_lx_mwi mwiLx;
+	Tkvalue kvalue;
 	string dateTime1;
 	getDateTimeNow(dateTime1);
-	cout << dateTime1 << endl;
-	mwiLx.setKey_("1234").setStation("station").setProductlevel(2)
-		.setDatacollectstart(dateTime1).setBandlist("bandlist text")
-		.setBandreg(true).Insert();
+	kvalue.setKey_("testkey")
+		.setValue_("tvalue")
+		.setInfo("tinfo")
+		.setStatus_(1)
+		.setAdd_time(dateTime1).Insert();
 }
 
 void EmpUpdate(){
-	T5_dp_zw_r daoZWR2;
-	daoZWR2.setStation("TG01").Update("key_='zwr_key'");
+	Tkvalue kvalue;
+	kvalue.setInfo("tinfoupdate").Update("id=1");
 }

@@ -26,12 +26,12 @@ private:
 	 * 字段描述：产品报表编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：用户ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger userid;
+	long userid;
 	/**
 	 * 字段描述：报告创建时间 
 	 * 字段类型：datetime  长度：null
@@ -69,28 +69,33 @@ private:
 	string pdt_type;
 	/**
 	 * 字段描述：报告格式代码 
-	 * 字段类型：enum  长度：4
+	 * 字段类型：enum  长度：2
 	 */
 	string suffix;
+	/**
+	 * 字段描述：下载路径 
+	 * 字段类型：varchar  长度：256
+	 */
+	string download_path;
 public:
 	
 	
-	T10pdt_report& setId(biginteger aid){
+	T10pdt_report& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
 	
-	T10pdt_report& setUserid(biginteger auserid){
+	T10pdt_report& setUserid(long auserid){
 		userid = auserid;
 		mapSQLTokens["userid"] = to_string(userid);
 		return *this;
 	}
-	biginteger getUserid() {
+	long getUserid() {
 		return userid;
 	}
 	
@@ -179,6 +184,17 @@ public:
 	}
 	string getSuffix() {
 		return suffix;
+	}
+	
+	
+	T10pdt_report& setDownload_path(string adownload_path){
+		download_path = adownload_path;
+		
+		mapSQLTokens["download_path"] = "'"+download_path+"'";
+		return *this;
+	}
+	string getDownload_path() {
+		return download_path;
 	}
 	
 };

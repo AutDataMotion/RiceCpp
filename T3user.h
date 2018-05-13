@@ -26,14 +26,14 @@ private:
 	 * 字段描述：用户ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：用户类型代码 
-	 * 字段类型：enum  长度：5
+	 * 字段类型：enum  长度：2
 	 */
 	string type_;
 	/**
-	 * 字段描述：用户名 
+	 * 字段描述：username 
 	 * 字段类型：varchar  长度：180
 	 */
 	string account;
@@ -89,18 +89,53 @@ private:
 	string create_time;
 	/**
 	 * 字段描述：用户审核状态代码 
-	 * 字段类型：enum  长度：5
+	 * 字段类型：enum  长度：2
 	 */
 	string status_;
+	/**
+	 * 字段描述：忘记密码校验码 
+	 * 字段类型：varchar  长度：6
+	 */
+	string identiCode;
+	/**
+	 * 字段描述：校验码到期时间 
+	 * 字段类型：datetime  长度：null
+	 */
+	string expirTime;
+	/**
+	 * 字段描述：产品生效日期 
+	 * 字段类型：datetime  长度：null
+	 */
+	string Prdt_EfDt;
+	/**
+	 * 字段描述：产品到期日期 
+	 * 字段类型：datetime  长度：null
+	 */
+	string PD_ExDat;
+	/**
+	 * 字段描述：账号是否激活 
+	 * 字段类型：int  长度：null
+	 */
+	int activation;
+	/**
+	 * 字段描述： 
+	 * 字段类型：varchar  长度：200
+	 */
+	string area;
+	/**
+	 * 字段描述：产品类型代码 
+	 * 字段类型：varchar  长度：50
+	 */
+	string PD_TpCd;
 public:
 	
 	
-	T3user& setId(biginteger aid){
+	T3user& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
@@ -245,6 +280,82 @@ public:
 	}
 	string getStatus_() {
 		return status_;
+	}
+	
+	
+	T3user& setIdentiCode(string aidentiCode){
+		identiCode = aidentiCode;
+		
+		mapSQLTokens["identiCode"] = "'"+identiCode+"'";
+		return *this;
+	}
+	string getIdentiCode() {
+		return identiCode;
+	}
+	
+	
+	T3user& setExpirTime(string aexpirTime){
+		expirTime = aexpirTime;
+		
+		mapSQLTokens["expirTime"] = "'"+expirTime+"'";
+		return *this;
+	}
+	string getExpirTime() {
+		return expirTime;
+	}
+	
+	
+	T3user& setPrdt_EfDt(string aPrdt_EfDt){
+		Prdt_EfDt = aPrdt_EfDt;
+		
+		mapSQLTokens["Prdt_EfDt"] = "'"+Prdt_EfDt+"'";
+		return *this;
+	}
+	string getPrdt_EfDt() {
+		return Prdt_EfDt;
+	}
+	
+	
+	T3user& setPD_ExDat(string aPD_ExDat){
+		PD_ExDat = aPD_ExDat;
+		
+		mapSQLTokens["PD_ExDat"] = "'"+PD_ExDat+"'";
+		return *this;
+	}
+	string getPD_ExDat() {
+		return PD_ExDat;
+	}
+	
+	
+	T3user& setActivation(int aactivation){
+		activation = aactivation;
+		mapSQLTokens["activation"] = to_string(activation);
+		return *this;
+	}
+	int getActivation() {
+		return activation;
+	}
+	
+	
+	T3user& setArea(string aarea){
+		area = aarea;
+		
+		mapSQLTokens["area"] = "'"+area+"'";
+		return *this;
+	}
+	string getArea() {
+		return area;
+	}
+	
+	
+	T3user& setPD_TpCd(string aPD_TpCd){
+		PD_TpCd = aPD_TpCd;
+		
+		mapSQLTokens["PD_TpCd"] = "'"+PD_TpCd+"'";
+		return *this;
+	}
+	string getPD_TpCd() {
+		return PD_TpCd;
 	}
 	
 };

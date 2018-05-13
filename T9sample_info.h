@@ -26,17 +26,17 @@ private:
 	 * 字段描述：样本编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：用户ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger userid;
+	long userid;
 	/**
 	 * 字段描述：源文件编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger identifier;
+	long identifier;
 	/**
 	 * 字段描述：样本名称 
 	 * 字段类型：varchar  长度：128
@@ -65,32 +65,32 @@ private:
 public:
 	
 	
-	T9sample_info& setId(biginteger aid){
+	T9sample_info& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
 	
-	T9sample_info& setUserid(biginteger auserid){
+	T9sample_info& setUserid(long auserid){
 		userid = auserid;
 		mapSQLTokens["userid"] = to_string(userid);
 		return *this;
 	}
-	biginteger getUserid() {
+	long getUserid() {
 		return userid;
 	}
 	
 	
-	T9sample_info& setIdentifier(biginteger aidentifier){
+	T9sample_info& setIdentifier(long aidentifier){
 		identifier = aidentifier;
 		mapSQLTokens["identifier"] = to_string(identifier);
 		return *this;
 	}
-	biginteger getIdentifier() {
+	long getIdentifier() {
 		return identifier;
 	}
 	

@@ -23,10 +23,10 @@ public:
 private:
 	static const string TableName;
 	/**
-	 * 字段描述：id 
+	 * 字段描述： 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：key 
 	 * 字段类型：varchar  长度：64
@@ -55,12 +55,12 @@ private:
 public:
 	
 	
-	Tkvalue& setId(biginteger aid){
+	Tkvalue& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	

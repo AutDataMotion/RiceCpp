@@ -26,12 +26,12 @@ private:
 	 * 字段描述：源文件编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：用户ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger userid;
+	long userid;
 	/**
 	 * 字段描述：文件名称 
 	 * 字段类型：varchar  长度：128
@@ -54,7 +54,7 @@ private:
 	string storage_path;
 	/**
 	 * 字段描述：文件类型代码 
-	 * 字段类型：enum  长度：9
+	 * 字段类型：enum  长度：2
 	 */
 	string type_;
 	/**
@@ -69,7 +69,7 @@ private:
 	string band_number;
 	/**
 	 * 字段描述：文件状态代码 
-	 * 字段类型：enum  长度：6
+	 * 字段类型：enum  长度：2
 	 */
 	string status_;
 	/**
@@ -95,22 +95,22 @@ private:
 public:
 	
 	
-	T6org_data& setId(biginteger aid){
+	T6org_data& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
 	
-	T6org_data& setUserid(biginteger auserid){
+	T6org_data& setUserid(long auserid){
 		userid = auserid;
 		mapSQLTokens["userid"] = to_string(userid);
 		return *this;
 	}
-	biginteger getUserid() {
+	long getUserid() {
 		return userid;
 	}
 	

@@ -26,12 +26,12 @@ private:
 	 * 字段描述： 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：用户ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger userid;
+	long userid;
 	/**
 	 * 字段描述：参数类型名称 
 	 * 字段类型：varchar  长度：256
@@ -65,22 +65,22 @@ private:
 public:
 	
 	
-	T5parameter_type& setId(biginteger aid){
+	T5parameter_type& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
 	
-	T5parameter_type& setUserid(biginteger auserid){
+	T5parameter_type& setUserid(long auserid){
 		userid = auserid;
 		mapSQLTokens["userid"] = to_string(userid);
 		return *this;
 	}
-	biginteger getUserid() {
+	long getUserid() {
 		return userid;
 	}
 	

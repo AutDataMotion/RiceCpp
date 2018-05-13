@@ -26,12 +26,12 @@ private:
 	 * 字段描述：系统消息编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：发送人ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger send_userid;
+	long send_userid;
 	/**
 	 * 字段描述：系统消息时间 
 	 * 字段类型：datetime  长度：null
@@ -55,22 +55,22 @@ private:
 public:
 	
 	
-	T8message& setId(biginteger aid){
+	T8message& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
 	
-	T8message& setSend_userid(biginteger asend_userid){
+	T8message& setSend_userid(long asend_userid){
 		send_userid = asend_userid;
 		mapSQLTokens["send_userid"] = to_string(send_userid);
 		return *this;
 	}
-	biginteger getSend_userid() {
+	long getSend_userid() {
 		return send_userid;
 	}
 	

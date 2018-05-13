@@ -26,7 +26,7 @@ private:
 	 * 字段描述：系统日志编号 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger id;
+	long id;
 	/**
 	 * 字段描述：系统日志类型代码 
 	 * 字段类型：char  长度：3
@@ -36,7 +36,12 @@ private:
 	 * 字段描述：用户ID 
 	 * 字段类型：bigint  长度：null
 	 */
-	biginteger userid;
+	long userid;
+	/**
+	 * 字段描述：用户名 
+	 * 字段类型：varchar  长度：60
+	 */
+	string username;
 	/**
 	 * 字段描述：操作 
 	 * 字段类型：varchar  长度：256
@@ -55,12 +60,12 @@ private:
 public:
 	
 	
-	T2syslog& setId(biginteger aid){
+	T2syslog& setId(long aid){
 		id = aid;
 		mapSQLTokens["id"] = to_string(id);
 		return *this;
 	}
-	biginteger getId() {
+	long getId() {
 		return id;
 	}
 	
@@ -76,13 +81,24 @@ public:
 	}
 	
 	
-	T2syslog& setUserid(biginteger auserid){
+	T2syslog& setUserid(long auserid){
 		userid = auserid;
 		mapSQLTokens["userid"] = to_string(userid);
 		return *this;
 	}
-	biginteger getUserid() {
+	long getUserid() {
 		return userid;
+	}
+	
+	
+	T2syslog& setUsername(string ausername){
+		username = ausername;
+		
+		mapSQLTokens["username"] = "'"+username+"'";
+		return *this;
+	}
+	string getUsername() {
+		return username;
 	}
 	
 	
